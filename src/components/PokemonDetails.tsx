@@ -155,7 +155,8 @@ export const PokemonDetails = ({pokemon} : Props) => {
                 {/* Sprite final  */}
 
                 <View style={{
-                    alignItems: 'center'
+                    alignItems: 'center',
+                    marginBottom: 60
                 }}>
                     <FadeInImage 
                         uri={pokemon.sprites.front_default}
