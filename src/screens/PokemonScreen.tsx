@@ -1,13 +1,12 @@
 import { StackScreenProps } from '@react-navigation/stack'
 import React from 'react'
 import { Text, View, StyleSheet, TouchableOpacity, Image, ActivityIndicator } from 'react-native';
-4
+
 import Icon from 'react-native-vector-icons/Ionicons';
 
-import { RootStackParams } from '../navigation/Navigator';
+import { RootStackParams } from '../navigation/Tab1';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { FadeInImage } from '../components/FadeInImage';
-import { styles } from '../theme/AppTheme';
 import { usePokemon } from '../hooks/usePokemon';
 import { PokemonDetails } from '../components/PokemonDetails';
 
@@ -19,11 +18,8 @@ export const PokemonScreen = ({ navigation, route }: Props) => {
     const { id, name, picture } = simplePokemon
 
     const { top } = useSafeAreaInsets()
-
     const { isLoading, pokemon } = usePokemon(id)
-    console.log(pokemon);
     
-
     return (
 
         <View style={{flex: 1}}>
@@ -85,12 +81,8 @@ export const PokemonScreen = ({ navigation, route }: Props) => {
                         />
                     </View>
                 )
-                : <PokemonDetails pokemon={ pokemon }  />
+                : <PokemonDetails pokemon={ pokemon } />
             }
-
-            
-
-
 
         </View>
     )
